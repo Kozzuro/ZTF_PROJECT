@@ -1,0 +1,12 @@
+<div class="container p-5">
+    <label for="field1">Field 1: </label>
+    <input id="field1" type="text" [formControl]="field1">
+    <div class="p-3"></div>
+    <label for="field2">Field 2: </label>
+    <input id="field2" type="text" [formControl]="field2">
+    <div class="p-3"></div>
+    <label for="field3">Field 3: </label>
+    <input id="field3" type="text" [formControl]="field3">
+    <div class="p-3"></div>
+    <button (click)="send()" class="btn btn-sm btn-success">SEND</button>
+</div>
