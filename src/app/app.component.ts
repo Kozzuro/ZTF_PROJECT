@@ -27,5 +27,5 @@ export class AppComponent implements OnInit {
       returnTo: this.document.location.origin,
     });
   }
-
+    
 }

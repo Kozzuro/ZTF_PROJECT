@@ -1,6 +1,6 @@
 import { computeMsgId } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-rform',
@@ -14,15 +14,17 @@ export class RformComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  field1 = new FormControl('');
-  field2 = new FormControl('');
-  field3 = new FormControl('');
+  formOne = new FormGroup({
+    field1: new FormControl(),
+    field2: new FormControl(),
+    field3: new FormControl()
+  }); 
 
-  send() {
-    var f1_val = (document.getElementById("field1") as HTMLInputElement).value;
-    var f2_val = (document.getElementById("field2") as HTMLInputElement).value;
-    var f3_val = (document.getElementById("field3") as HTMLInputElement).value;
-    alert(f1_val + ', ' + f2_val + ', ' +f3_val);
+  send(): void {
+    var f1_val = this.formOne.value.field1;
+    var f2_val = this.formOne.value.field2;
+    var f3_val = this.formOne.value.field1;
+    alert(`Value 1: ${f1_val}, Value 2 ${f2_val}, Value 3 ${f3_val}`);
   }
 
 }
